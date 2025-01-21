@@ -239,6 +239,6 @@ for topic, tab in zip(interview_questions.keys(), tabs):
     with tab:
         st.header(f"{topic} Interview Questions")
         for qa in interview_questions[topic]:
-            st.subheader(f'Q.{qa["question"]}')
-            st.write(f'A.{qa["answer"]}')
+            st.subheader(f'Q. {qa["question"]}')
+            st.write(f'A. {qa["answer"]}')
             st.markdown("---")  # Horizontal line
