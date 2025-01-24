@@ -429,6 +429,7 @@ tabs = st.tabs(list(interview_questions.keys()))
 for topic, tab in zip(interview_questions.keys(), tabs):
     with tab:
         st.header(f"{topic} Interview Questions")
+        st.markdown("---")
         for qa in interview_questions[topic]:
             for key,question in qa.items():
                 if topic == "Python":
