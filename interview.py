@@ -3,233 +3,424 @@ import streamlit as st
 # Dictionary containing topics and their interview questions with answers
 interview_questions = {
     "Python": [
-        {"question": "What is Python?", "answer": "Python is an interpreted, high-level programming language."},
-        {"question": "Explain Python's key features.", "answer": "Python has dynamic typing, garbage collection, and supports multiple programming paradigms."},
-        {"question": "What are the different data types in Python?", "answer": "Integers, floats, strings, lists, tuples, dictionaries, etc."},
-        {"question": "What is a function in Python?", "answer": "A function is a reusable block of code that performs a specific task."},
-        {"question": "What is a class in Python?", "answer": "A class is a blueprint for creating objects with predefined attributes and methods."},
-        {"question": "What is a module in Python?", "answer": "A module is a file containing Python code that can be imported and used in other Python programs."},
-        {"question": "What is a package in Python?", "answer": "A package is a collection of related modules that are organized in a directory hierarchy."},
-        {"question": "What is PEP 8?", "answer": "PEP 8 is the Python Enhancement Proposal that provides guidelines for writing clean and readable Python code."},
-        {"question": "What is a virtual environment in Python?", "answer": "A virtual environment is a self-contained directory that contains a Python installation for a specific project."},
-        {"question": "How do you install external packages in Python?", "answer": "Using pip, the Python package manager, e.g., pip install numpy."},
-        {"question": "What is a lambda function in Python?", "answer": "A lambda function is an anonymous function defined using the lambda keyword."},
-        {"question": "What is list comprehension in Python?", "answer": "List comprehension is a concise way to create lists in Python."},
-        {"question": "What is a decorator in Python?", "answer": "A decorator is a design pattern that allows you to add new functionality to an existing object without modifying its structure."},
-        {"question": "What is a generator in Python?", "answer": "A generator is a function that returns an iterator object using the yield keyword."},
-        {"question": "What is the difference between a list and a tuple in Python?", "answer": "Lists are mutable, while tuples are immutable."},
-        {"question": "What is the difference between '==' and 'is' in Python?", "answer": "'==' compares the values of two objects, while 'is' compares the identities of two objects."},
-        {"question": "What is the difference between 'append()' and 'extend()' in Python?", "answer": "'append()' adds an element to a list, while 'extend()' adds elements from an iterable."},
-        {"question": "What is the difference between 'remove()' and 'pop()' in Python?", "answer": "'remove()' deletes an element by value, while 'pop()' deletes an element by index."},
-        {"question": "What is the difference between 'deep copy' and 'shallow copy' in Python?", "answer": "A deep copy creates a new object and recursively copies the objects found in the original, while a shallow copy creates a new object and references the objects found in the original."},
-        {"question": "What is the difference between 'global' and 'nonlocal' in Python?", "answer": "'global' is used to declare global variables, while 'nonlocal' is used to declare variables in nested functions."},
-        {"question": "What is the difference between 'iterable' and 'iterator' in Python?", "answer": "An iterable is an object that can be iterated over, while an iterator is an object that generates the next value in a sequence."},
-        {"question": "What is the difference between 'map()' and 'filter()' in Python?", "answer": "'map()' applies a function to all the items in an input list, while 'filter()' creates a list of elements for which a function returns true."},
-        {"question": "What is the difference between 'sort()' and 'sorted()' in Python?", "answer": "'sort()' sorts a list in place, while 'sorted()' returns a new sorted list."},
-        {"question": "What is the difference between '==', 'is', and 'in' in Python?", "answer": "'==' compares the values of two objects, 'is' compares the identities of two objects, and 'in' checks for membership in a sequence."},
-        {"question": "What is the difference between 'args' and 'kwargs' in Python?", "answer": "'args' is used to pass a variable number of non-keyword arguments to a function, while 'kwargs' is used to pass a variable number of keyword arguments to a function."},
-        {"question": "What is the difference between 'super()' and 'self' in Python?", "answer": "'super()' is used to access the parent class of a child class, while 'self' is used to access the current instance of a class."},
-        {"question": "What is the difference between 'instance method', 'class method', and 'static method' in Python?", "answer": "An instance method operates on an instance of a class, a class method operates on the class itself, and a static method does not operate on either the instance or the class."},
-        {"question": "What is the difference between 'list comprehension' and 'map()' in Python?", "answer": "List comprehension is a concise way to create lists, while map() applies a function to all the items in an input list."},
-        {"question": "What is the difference between 'deepcopy()' and 'copy()' in Python?", "answer": "'deepcopy()' creates a new object and recursively copies the objects found in the original, while 'copy()' creates a new object and references the objects found in the original."},
-        {"question": "What is the difference between 're.match()' and 're.search()' in Python?", "answer": "'re.match()' matches the pattern at the beginning of the string, while 're.search()' matches the pattern anywhere in the string."},
-        # Add up to 30 questions and answers
+            {"Q1": {
+            "question": "Write a Python program to check if a number is even or odd.",
+            "answer": """num = int(input("Enter a number: "))
+    if num % 2 == 0:
+        print("Even")
+    else:
+        print("Odd")""",
+            "explanation": "This program checks if a number is divisible by 2. If the remainder is 0, the number is even; otherwise, it's odd."
+        },
+        "Q2": {
+            "question": "Write a Python function to reverse a string.",
+            "answer": """def reverse_string(s):
+        return s[::-1]""",
+            "explanation": "This function uses slicing to reverse the input string. The slicing feature makes reversing strings concise and efficient."
+        },
+        "Q3": {
+            "question": "How can you find the largest number in a list?",
+            "answer": """def find_largest(numbers):
+        return max(numbers)""",
+            "explanation": "The max() function scans through the list and returns the highest value, making it a straightforward solution."
+        },
+        "Q4": {
+            "question": "Write a program to calculate the factorial of a number.",
+            "answer": """def factorial(n):
+        if n == 0:
+            return 1
+        else:
+            return n * factorial(n - 1)""",
+            "explanation": "This recursive function multiplies the number by the factorial of (number - 1) until it reaches the base case of 0."
+        },
+        "Q5": {
+            "question": "How do you check if a string is a palindrome?",
+            "answer": """def is_palindrome(s):
+        return s == s[::-1]""",
+            "explanation": "The function compares the input string to its reversed version. If they are the same, it returns True."
+        },
+        "Q6": {
+            "question": "Write a program to count the number of vowels in a given string.",
+            "answer": """def count_vowels(s):
+        return sum(1 for char in s if char.lower() in 'aeiou')""",
+            "explanation": "The function iterates through the string, checking for vowels and summing the matches, ensuring case-insensitivity."
+        },
+        "Q7": {
+            "question": "How do you remove duplicates from a list?",
+            "answer": """def remove_duplicates(lst):
+        return list(set(lst))""",
+            "explanation": "Converting the list to a set removes duplicates, and converting it back to a list ensures the result is in list form."
+        },
+        "Q8": {
+            "question": "Write a program to find the common elements in two lists.",
+            "answer": """def common_elements(list1, list2):
+        return list(set(list1) & set(list2))""",
+            "explanation": "The set intersection operator '&' identifies elements common to both lists, which are then converted back to a list."
+        },
+        "Q9": {
+            "question": "How do you merge two dictionaries in Python?",
+            "answer": """dict1 = {'a': 1, 'b': 2}
+    dict2 = {'b': 3, 'c': 4}
+    merged = {**dict1, **dict2}""",
+            "explanation": "Using the dictionary unpacking operator '**', values from dict2 overwrite dict1 in case of duplicate keys."
+        },
+        "Q10": {
+            "question": "Write a program to sort a list of numbers.",
+            "answer": """def sort_numbers(numbers):
+        return sorted(numbers)""",
+            "explanation": "The sorted() function returns a new list containing all elements in ascending order."
+        },
+        "Q11": {
+            "question": "Write a program to find the Fibonacci series up to n.",
+            "answer": """def fibonacci(n):
+        fib_series = [0, 1]
+        while len(fib_series) < n:
+            fib_series.append(fib_series[-1] + fib_series[-2])
+        return fib_series[:n]""",
+            "explanation": "The Fibonacci series starts with 0 and 1. Each subsequent number is the sum of the two preceding numbers."
+        },
+        "Q12": {
+            "question": "Write a Python function to check if a number is prime.",
+            "answer": """def is_prime(n):
+        if n <= 1:
+            return False
+        for i in range(2, int(n**0.5) + 1):
+            if n % i == 0:
+                return False
+        return True""",
+            "explanation": "The function checks divisors up to the square root of the number, which is computationally efficient for prime checks."
+        }
+}# Add up to 30 questions and answers
     ],
-    "SQL": [
-        {"question": "What is SQL?", "answer": "SQL (Structured Query Language) is used to communicate with databases."},
-        {"question": "What are the different types of JOINs in SQL?", "answer": "INNER JOIN, LEFT JOIN, RIGHT JOIN, FULL JOIN, CROSS JOIN, etc."},
-        {"question": "What is a primary key in SQL?", "answer": "A primary key is a unique identifier for each record in a table."},
-        {"question": "What is a foreign key in SQL?", "answer": "A foreign key is a field that links two tables together."},
-        {"question": "What is a subquery in SQL?", "answer": "A subquery is a query nested within another query."},
-        {"question": "What is a view in SQL?", "answer": "A view is a virtual table based on the result set of a SELECT statement."},
-        {"question": "What is a stored procedure in SQL?", "answer": "A stored procedure is a set of SQL statements that can be executed on the database."},
-        {"question": "What is a trigger in SQL?", "answer": "A trigger is a set of SQL statements that are automatically executed when a specified event occurs."},
-        {"question": "What is normalization in SQL?", "answer": "Normalization is the process of organizing data in a database to reduce redundancy and improve data integrity."},
-        {"question": "What is denormalization in SQL?", "answer": "Denormalization is the process of adding redundant data to a database to improve read performance."},
-        {"question": "What is an index in SQL?", "answer": "An index is a data structure that improves the speed of data retrieval operations on a database table."},
-        {"question": "What is a constraint in SQL?", "answer": "A constraint is a rule that enforces data integrity in a database."},
-        {"question": "What is the difference between 'HAVING' and 'WHERE' in SQL?", "answer": "'HAVING' is used with GROUP BY to filter groups, while 'WHERE' is used to filter rows."},
-        {"question": "What is the difference between 'UNION' and 'UNION ALL' in SQL?", "answer": "'UNION' removes duplicate rows, while 'UNION ALL' retains duplicate rows."},
-        {"question": "What is the difference between 'TRUNCATE' and 'DELETE' in SQL?", "answer": "'TRUNCATE' removes all rows from a table, while 'DELETE' removes specific rows based on a condition."},
-        {"question": "What is the difference between 'CHAR' and 'VARCHAR' in SQL?", "answer": "'CHAR' is a fixed-length data type, while 'VARCHAR' is a variable-length data type."},
-        {"question": "What is the difference between 'NULL' and 'NOT NULL' in SQL?", "answer": "'NULL' allows a column to have no value, while 'NOT NULL' requires a column to have a value."},
-        {"question": "What is the difference between 'GROUP BY' and 'ORDER BY' in SQL?", "answer": "'GROUP BY' groups rows based on a column, while 'ORDER BY' sorts rows based on a column."},
-        {"question": "What is the difference between 'COUNT(*)' and 'COUNT(column)' in SQL?", "answer": "'COUNT(*)' counts all rows in a table, while 'COUNT(column)' counts non-null values in a column."},
-        {"question": "What is the difference between 'INNER JOIN' and 'OUTER JOIN' in SQL?", "answer": "'INNER JOIN' returns rows that have matching values in both tables, while 'OUTER JOIN' returns all rows from both tables."},
-        {"question": "What is the difference between 'LIKE' and 'IN' in SQL?", "answer": "'LIKE' is used to search for a specified pattern in a column, while 'IN' is used to specify multiple values in a WHERE clause."},
-        {"question": "What is the difference between 'UNIQUE' and 'PRIMARY KEY' in SQL?", "answer": "'UNIQUE' allows null values and multiple occurrences, while 'PRIMARY KEY' does not allow null values and enforces uniqueness."},
-        {"question": "What is the difference between 'HAVING' and 'WHERE' in SQL?", "answer": "'HAVING' is used with GROUP BY to filter groups, while 'WHERE' is used to filter rows."},
-        {"question": "What is the difference between 'UNION' and 'UNION ALL' in SQL?", "answer": "'UNION' removes duplicate rows, while 'UNION ALL' retains duplicate rows."},
-        {"question": "What is the difference between 'TRUNCATE' and 'DELETE' in SQL?", "answer": "'TRUNCATE' removes all rows from a table, while 'DELETE' removes specific rows based on a condition."},
-        {"question": "What is the difference between 'CHAR' and 'VARCHAR' in SQL?", "answer": "'CHAR' is a fixed-length data type, while 'VARCHAR' is a variable-length data type."},
-        {"question": "What is the difference between 'NULL' and 'NOT NULL' in SQL?", "answer": "'NULL' allows a column to have no value, while 'NOT NULL' requires a column to have a value."},
-        {"question": "What is the difference between 'GROUP BY' and 'ORDER BY' in SQL?", "answer": "'GROUP BY' groups rows based on a column, while 'ORDER BY' sorts rows based on a column."},
-        {"question": "What is the difference between 'COUNT(*)' and 'COUNT(column)' in SQL?", "answer": "'COUNT(*)' counts all rows in a table, while 'COUNT(column)' counts non-null values in a column."},
-        {"question": "What is the difference between 'INNER JOIN' and 'OUTER JOIN' in SQL?", "answer": "'INNER JOIN' returns rows that have matching values in both tables, while 'OUTER JOIN' returns all rows from both tables."},
-        # Add up to 30 questions and answers
+    "SQL": [{
+        # like python questions and answers for SQL with quries and answers
+        "Q1": {
+            "question": "What is SQL?",
+            "answer": "SQL (Structured Query Language) is a domain-specific language used to interact with databases.",
+            "explanation": "SQL is used to query and manipulate data stored in databases."
+        },        
+        "Q2": {
+            "question": "What is a database?",
+            "answer": "A database is a collection of structured data, typically stored in a relational database management system (RDBMS).",
+            "explanation": "Databases are typically used to store and retrieve data in a structured format, such as tables and relations."
+        },
+        "Q3": {
+            "question": "What is a table?",
+            "answer": "A table is a collection of rows and columns, where each row represents a record and each column holds a specific type of data.",
+            "explanation": "Tables store data in a structured format, with rows representing records and columns representing different attributes."
+        },
+        "Q4": {
+            "question": "What is a primary key?",
+            "answer": "A primary key is a unique identifier for each record in a table.",
+            "explanation": "Primary keys are used to ensure that each record in a table is unique and can be easily identified."
+        },
+        "Q5": { 
+            "question": "What is a foreign key?",
+            "answer": "A foreign key is a field in a table that links to the primary key of another table.",
+            "explanation": "Foreign keys establish relationships between tables by referencing the primary key of another table."
+        },
+        "Q6": {
+            "question": "What is a join?",
+            "answer": "A join is a SQL operation that combines rows from two or more tables based on a related column between them.",
+            "explanation": "Joins are used to retrieve data from multiple tables based on a common column, such as a primary key and foreign key relationship."
+        },
+        "Q7": {
+            "question": "What is a subquery?",
+            "answer": "A subquery is a query nested within another query.",
+            "explanation": "Subqueries are used to retrieve data from a table based on the results of another query."
+        },
+        "Q8": {
+            "question": "What is a view?",
+            "answer": "A view is a virtual table based on a query.",
+            "explanation": "Views are used to provide a convenient way to access a subset of data from a table."
+        },
+        "Q9": {
+            "question": "What is a stored procedure?",
+            "answer": "A stored procedure is a collection of SQL statements that can be executed as a single unit.",    
+            "explanation": "Stored procedures are used to encapsulate and execute complex logic on the database server."
+        },
+        "Q10": {
+            "question": "What is a trigger?",
+            "answer": "A trigger is a set of actions that are automatically performed in response to certain events on a table.",
+            "explanation": "Triggers are used to enforce data integrity rules or perform actions based on changes to the database."
+        }
+    },
     ],
-    "Excel": [
-        {"question": "What is Excel?", "answer": "Excel is a spreadsheet application developed by Microsoft."},
-        {"question": "How do you create a pivot table?", "answer": "Select data, go to Insert > PivotTable, and configure the fields."},
-        {"question": "How do you create a chart?", "answer": "Select data, go to Insert > Chart, and configure the chart."},
-        {"question": "What is a VLOOKUP?", "answer": "VLOOKUP is a function used to search for a value in a table and return a corresponding value."},
-        {"question": "What is an IF function?", "answer": "IF is a function used to perform conditional logic in Excel."},
-        {"question": "What is conditional formatting?", "answer": "Conditional formatting is a feature that highlights cells based on specified conditions."},
-        {"question": "What is a named range?", "answer": "A named range is a range of cells with a specific name."},
-        {"question": "What is a data validation?", "answer": "Data validation is a feature that restricts the type of data that can be entered in a cell."},
-        {"question": "What is a formula?", "answer": "A formula is an expression that performs calculations on values in a worksheet."},
-        {"question": "What is a function?", "answer": "A function is a predefined formula that performs specific calculations."},
-        {"question": "What is a macro?", "answer": "A macro is a set of instructions that automates tasks in Excel."},
-        {"question": "What is a filter?", "answer": "A filter is a feature that displays only the rows that meet specified criteria."},
-        {"question": "What is a slicer?", "answer": "A slicer is a visual control that filters data in a pivot table or chart."},
-        {"question": "What is a sparkline?", "answer": "A sparkline is a small chart that provides a visual representation of data in a cell."},
-        {"question": "What is a table?", "answer": "A table is a range of cells with structured data that can be sorted and filtered."},
-        {"question": "What is a worksheet?", "answer": "A worksheet is a single page in an Excel workbook."},
-        {"question": "What is a workbook?", "answer": "A workbook is a file that contains one or more worksheets."},
-        {"question": "What is the difference between a workbook and a worksheet?", "answer": "A workbook is a file that contains one or more worksheets, while a worksheet is a single page in an Excel workbook."},
-        {"question": "What is the difference between a chart and a pivot table?", "answer": "A chart is a visual representation of data, while a pivot table is a summary of data."},
-        {"question": "What is the difference between a formula and a function?", "answer": "A formula is an expression that performs calculations on values in a worksheet, while a function is a predefined formula that performs specific calculations."},
-        {"question": "What is the difference between a filter and a slicer?", "answer": "A filter displays only the rows that meet specified criteria, while a slicer filters data in a pivot table or chart."},
-        {"question": "What is the difference between a named range and a table?", "answer": "A named range is a range of cells with a specific name, while a table is a range of cells with structured data that can be sorted and filtered."},
-        {"question": "What is the difference between a sparkline and a chart?", "answer": "A sparkline is a small chart that provides a visual representation of data in a cell, while a chart is a visual representation of data."},
-        {"question": "What is the difference between a workbook and a worksheet?", "answer": "A workbook is a file that contains one or more worksheets, while a worksheet is a single page in an Excel workbook."},
-        {"question": "What is the difference between a chart and a pivot table?", "answer": "A chart is a visual representation of data, while a pivot table is a summary of data."},
-        {"question": "What is the difference between a formula and a function?", "answer": "A formula is an expression that performs calculations on values in a worksheet, while a function is a predefined formula that performs specific calculations."},
-        {"question": "What is the difference between a filter and a slicer?", "answer": "A filter displays only the rows that meet specified criteria, while a slicer filters data in a pivot table or chart."},
-        {"question": "What is the difference between a named range and a table?", "answer": "A named range is a range of cells with a specific name, while a table is a range of cells with structured data that can be sorted and filtered."},
-        {"question": "What is the difference between a sparkline and a chart?", "answer": "A sparkline is a small chart that provides a visual representation of data in a cell, while a chart is a visual representation of data."},
-        {"question": "What is the difference between a workbook and a worksheet?", "answer": "A workbook is a file that contains one or more worksheets, while a worksheet is a single page in an Excel workbook."},
-        # Add up to 30 questions and answers
-    ],
-    "NumPy": [
-        {"question": "What is NumPy?", "answer": "NumPy is a library for numerical computing in Python."},
-        {"question": "How do you create a NumPy array?", "answer": "Using the numpy.array() function."},
-        {"question": "What is the difference between a NumPy array and a Python list?", "answer": "NumPy arrays are homogeneous and support vectorized operations, while Python lists are heterogeneous and do not support vectorized operations."},
-        {"question": "What is a vectorized operation?", "answer": "A vectorized operation applies an operation to each element in an array without the need for explicit loops."},
-        {"question": "What is a universal function (ufunc) in NumPy?", "answer": "A ufunc is a function that operates element-wise on NumPy arrays."},
-        {"question": "What is broadcasting in NumPy?", "answer": "Broadcasting is a mechanism that allows NumPy to perform operations on arrays of different shapes."},
-        {"question": "What is the difference between a filter and a slicer?", "answer": "A filter displays only the rows that meet specified criteria, while a slicer filters data in a pivot table or chart."},
-        {"question": "What is the difference between a named range and a table?", "answer": "A named range is a range of cells with a specific name, while a table is a range of cells with structured data that can be sorted and filtered."},
-        {"question": "What is the difference between a sparkline and a chart?", "answer": "A sparkline is a small chart that provides a visual representation of data in a cell, while a chart is a visual representation of data."},
-        {"question": "What is the difference between a workbook and a worksheet?", "answer": "A workbook is a file that contains one or more worksheets, while a worksheet is a single page in an Excel workbook."},
-        {"question": "What is the difference between a chart and a pivot table?", "answer": "A chart is a visual representation of data, while a pivot table is a summary of data."},
-        {"question": "What is the difference between a formula and a function?", "answer": "A formula is an expression that performs calculations on values in a worksheet, while a function is a predefined formula that performs specific calculations."},
-        {"question": "What is the difference between a filter and a slicer?", "answer": "A filter displays only the rows that meet specified criteria, while a slicer filters data in a pivot table or chart."},
-        {"question": "What is the difference between a named range and a table?", "answer": "A named range is a range of cells with a specific name, while a table is a range of cells with structured data that can be sorted and filtered."},
-        {"question": "What is the difference between a sparkline and a chart?", "answer": "A sparkline is a small chart that provides a visual representation of data in a cell, while a chart is a visual representation of data."},
-        {"question": "What is the difference between a workbook and a worksheet?", "answer": "A workbook is a file that contains one or more worksheets, while a worksheet is a single page in an Excel workbook."},
-        {"question": "What is the difference between a chart and a pivot table?", "answer": "A chart is a visual representation of data, while a pivot table is a summary of data."},
-        {"question": "What is the difference between a formula and a function?", "answer": "A formula is an expression that performs calculations on values in a worksheet, while a function is a predefined formula that performs specific calculations."},
-        {"question": "What is the difference between a filter and a slicer?", "answer": "A filter displays only the rows that meet specified criteria, while a slicer filters data in a pivot table or chart."},
-        {"question": "What is the difference between a named range and a table?", "answer": "A named range is a range of cells with a specific name, while a table is a range of cells with structured data that can be sorted and filtered."},
-        {"question": "What is the difference between a sparkline and a chart?", "answer": "A sparkline is a small chart that provides a visual representation of data in a cell, while a chart is a visual representation of data."},
-        {"question": "What is the difference between a workbook and a worksheet?", "answer": "A workbook is a file that contains one or more worksheets, while a worksheet is a single page in an Excel workbook."},
-        {"question": "What is the difference between a chart and a pivot table?", "answer": "A chart is a visual representation of data, while a pivot table is a summary of data."},
-        {"question": "What is the difference between a formula and a function?", "answer": "A formula is an expression that performs calculations on values in a worksheet, while a function is a predefined formula that performs specific calculations."},
-        {"question": "What is the difference between a filter and a slicer?", "answer": "A filter displays only the rows that meet specified criteria, while a slicer filters data in a pivot table or chart."},
-        {"question": "What is the difference between a named range and a table?", "answer": "A named range is a range of cells with a specific name, while a table is a range of cells with structured data that can be sorted and filtered."},
-        {"question": "What is the difference between a sparkline and a chart?", "answer": "A sparkline is a small chart that provides a visual representation of data in a cell, while a chart is a visual representation of data."},
-        {"question": "What is the difference between a workbook and a worksheet?", "answer": "A workbook is a file that contains one or more worksheets, while a worksheet is a single page in an Excel workbook."},
-        {"question": "What is the difference between a chart and a pivot table?", "answer": "A chart is a visual representation of data, while a pivot table is a summary of data."},
-        {"question": "What is the difference between a formula and a function?", "answer": "A formula is an expression that performs calculations on values in a worksheet, while a function is a predefined formula that performs specific calculations."},
-        # Add up to 30 questions and answers
+    "Excel": [{
+        "Q1": {
+            "question": "What is Excel?",
+            "answer": "Excel is a spreadsheet program used for data analysis, visualization, and management.",
+            "explanation": "Excel is a widely used tool for organizing, analyzing, and presenting data in a tabular format."
+        },
+        "Q2": {
+            "question": "What is a formula in Excel?",
+            "answer": "A formula in Excel is an expression that performs calculations on values in cells.",
+            "explanation": "Formulas can be used to perform mathematical operations, manipulate text, and more."
+        },
+        "Q3": {
+            "question": "What is a chart in Excel?",
+            "answer": "A chart in Excel is a graphical representation of data in a spreadsheet.",
+            "explanation": "Charts can help visualize data trends, comparisons, and relationships."
+        },
+        "Q4": {
+            "question": "What is a pivot table in Excel?",
+            "answer": "A pivot table in Excel is a table that organizes data based on one or more categories.",
+            "explanation": "Pivot tables are used to summarize and analyze data in a tabular format."
+        },
+        "Q5": {
+            "question": "What is a macro in Excel?",
+            "answer": "A macro in Excel is a collection of statements that perform a specific task or set of tasks.",
+            "explanation": "Macros can be used to automate tasks and processes in Excel."
+        },
+        "Q6": {
+            "question": "How do you create a formula in Excel?",    
+            "answer": "To create a formula in Excel, start a cell with an equal sign (=) followed by the formula expression.",
+            "explanation": "Formulas can include cell references, functions, and operators to perform calculations."
+            },
+        "Q7": { 
+            "question": "How do you create a chart in Excel?",
+            "answer": "To create a chart in Excel, select the data you want to visualize, go to the 'Insert' tab, and choose a chart type.",
+            "explanation": "Charts can be customized with different styles, colors, and labels to enhance data visualization."
+        },
+        "Q8": {
+            "question": "How do you create a pivot table in Excel?",
+            "answer": "To create a pivot table in Excel, select the data you want to analyze, go to the 'Insert' tab, and choose 'PivotTable'.",
+            "explanation": "Pivot tables can be used to summarize and analyze large datasets by grouping and aggregating data."
+        },
+        "Q9": {
+            "question": "How do you create a macro in Excel?",
+            "answer": "To create a macro in Excel, press Alt + F11 to open the VBA editor, insert a new module, and write the macro code.",
+            "explanation": "Macros can be recorded or written manually to automate repetitive tasks in Excel."
+        },
+        "Q10": {
+            "question": "What is the difference between a formula and a chart in Excel?",
+            "answer": "A formula is a mathematical expression that performs calculations on values in cells, while a chart is a graphical representation of data in a spreadsheet.",
+            "explanation": "Formulas can be used to perform calculations, manipulate text, and more, while charts are used to visualize data trends, comparisons, and relationships."
+        }
+    },
     ],
     "Pandas": [
-        {"question": "What is Pandas?", "answer": "Pandas is a Python library for data manipulation and analysis."},
-        {"question": "How do you create a DataFrame in Pandas?", "answer": "Using the pandas.DataFrame() function."},
-        {"question": "What is a DataFrame in Pandas?", "answer": "A DataFrame is a 2-dimensional labeled data structure with columns of potentially different types."},
-        {"question": "What is a Series in Pandas?", "answer": "A Series is a 1-dimensional labeled data structure with a single type."},
-        {"question": "How do you read data from a CSV file in Pandas?", "answer": "Using the pandas.read_csv() function."},
-        {"question": "How do you select rows and columns in a DataFrame?", "answer": "Using the .loc[] and .iloc[] methods."},
-        {"question": "How do you filter rows in a DataFrame?", "answer": "Using boolean indexing."},
-        {"question": "How do you group data in a DataFrame?", "answer": "Using the .groupby() method."},
-        {"question": "How do you merge two DataFrames in Pandas?", "answer": "Using the .merge() method."},
-        {"question": "How do you handle missing values in a DataFrame?", "answer": "Using the .dropna() and .fillna() methods."},
-        {"question": "How do you create a new column in a DataFrame?", "answer": "By assigning a value to a new column name."},
-        {"question": "How do you rename columns in a DataFrame?", "answer": "Using the .rename() method."},
-        {"question": "How do you sort values in a DataFrame?", "answer": "Using the .sort_values() method."},
-        {"question": "How do you apply a function to a DataFrame?", "answer": "Using the .apply() method."},
-        {"question": "How do you pivot a DataFrame in Pandas?", "answer": "Using the .pivot() method."},
-        {"question": "How do you melt a DataFrame in Pandas?", "answer": "Using the .melt() method."},
-        {"question": "What is the difference between .loc[] and .iloc[] in Pandas?", "answer": ".loc[] is label-based, while .iloc[] is integer-based."},
-        {"question": "What is the difference between .groupby() and .pivot_table() in Pandas?", "answer": ".groupby() groups data based on one or more columns, while .pivot_table() creates a spreadsheet-style pivot table."},
-        {"question": "What is the difference between .merge() and .join() in Pandas?", "answer": ".merge() is more flexible and can merge on any column, while .join() merges on the index."},
-        {"question": "What is the difference between .dropna() and .fillna() in Pandas?", "answer": ".dropna() removes missing values, while .fillna() fills missing values with a specified value."},
-        # Add up to 30 questions and answers
+        {
+        "Q1": {
+            "question": "What is Pandas?",
+            "answer": "Pandas is a Python library for data manipulation and analysis.",
+            "explanation": "Pandas provides data structures and functions to work with structured data, such as tables and time series."
+        },
+        "Q2": {
+            "question": "What is a DataFrame in Pandas?",
+            "answer": "A DataFrame in Pandas is a two-dimensional data structure that stores data in rows and columns.",            
+            "explanation": "DataFrames are the primary data structure in Pandas and are used to store and manipulate tabular data."
+        },
+        "Q3": {
+            "question": "What is a Series in Pandas?",
+            "answer": "A Series in Pandas is a one-dimensional data structure that stores data in a labeled array.",
+            "explanation": "Series are used to represent a single column or row of data in a DataFrame."
+        },
+        "Q4": {
+            "question": "What is a MultiIndex in Pandas?",
+            "answer": "A MultiIndex in Pandas is a hierarchical index that allows for multiple levels of indexing.",
+            "explanation": "MultiIndex is used to create a hierarchical index for a DataFrame, allowing for multiple levels of indexing."
+        },
+        "Q5": {
+            "question": "What is a pivot table in Pandas?",
+            "answer": "A pivot table in Pandas is a two-dimensional table that summarizes data based on one or more categories.",
+            "explanation": "Pivot tables are used to summarize and analyze data in a tabular format."
+        },
+        "Q6": {
+            "question": "What is a groupby operation in Pandas?",
+            "answer": "A groupby operation in Pandas is used to group data based on one or more columns and perform operations on the groups.",
+            "explanation": "Groupby operations are used to aggregate data, calculate statistics, and more."
+        },
+        "Q7": {
+            "question": "What is a merge operation in Pandas?",
+            "answer": "A merge operation in Pandas is used to combine two DataFrames based on a common column.",
+            "explanation": "Merge operations are used to combine data from multiple sources into a single DataFrame."
+        },
+        "Q8": {
+            "question": "What is a pivot table in Pandas?",
+            "answer": "A pivot table in Pandas is a two-dimensional table that summarizes data based on one or more categories.",
+            "explanation": "Pivot tables are used to summarize and analyze data in a tabular format."
+        },
+        "Q9": {
+            "question": "What is a pivot table in Pandas?",
+            "answer": "A pivot table in Pandas is a two-dimensional table that summarizes data based on one or more categories.",
+            "explanation": "Pivot tables are used to summarize and analyze data in a tabular format."
+        },
+        "Q10": {
+            "question": "What is a pivot table in Pandas?",
+            "answer": "A pivot table in Pandas is a two-dimensional table that summarizes data based on one or more categories.",
+            "explanation": "Pivot tables are used to summarize and analyze data in a tabular format."
+            }
+        },
     ],
     "Power BI": [
-        {"question": "What is Power BI?", "answer": "Power BI is a business analytics tool developed by Microsoft."},
-        {"question": "How do you create a report in Power BI?", "answer": "Import data, drag fields into visuals, and customize the visuals."},
-        {"question": "What is a data model in Power BI?", "answer": "A data model is a collection of tables and relationships in Power BI."},
-        {"question": "What is a measure in Power BI?", "answer": "A measure is a calculation based on the data in a Power BI report."},
-        {"question": "What is a visualization in Power BI?", "answer": "A visualization is a graphical representation of data in a Power BI report."},
-        {"question": "What is a dashboard in Power BI?", "answer": "A dashboard is a collection of visuals from multiple reports in Power BI."},
-        {"question": "What is a slicer in Power BI?", "answer": "A slicer is a visual control that filters data in a report."},
-        {"question": "What is a filter in Power BI?", "answer": "A filter is a condition that restricts the data displayed in a report."},
-        {"question": "What is a drill-through in Power BI?", "answer": "A drill-through is a feature that allows users to navigate from a summary report to a detailed report."},
-        {"question": "What is a bookmark in Power BI?", "answer": "A bookmark is a snapshot of a report page that can be saved and revisited."},
-        {"question": "What is a theme in Power BI?", "answer": "A theme is a set of predefined styles that can be applied to a report."},
-        {"question": "What is a gateway in Power BI?", "answer": "A gateway is a feature that allows users to navigate between reports."},
-        {"question": "What is a dataflow in Power BI?", "answer": "A dataflow is a collection of data entities that can be reused in multiple reports."},
-        {"question": "What is a workspace in Power BI?", "answer": "A workspace is a container for reports, dashboards, and datasets in Power BI."},
-        {"question": "What is a Power BI service?", "answer": "The Power BI service is a cloud-based platform for sharing and collaborating on Power BI reports."},
-        {"question": "What is the difference between a report and a dashboard in Power BI?", "answer": "A report is a single page with visuals, while a dashboard is a collection of visuals from multiple reports."},
-        {"question": "What is a Power BI desktop?", "answer": "The Power BI desktop is a desktop application for creating and editing Power BI reports."},
-        {"question": "What is the difference between a slicer and a filter in Power BI?", "answer": "A slicer is a visual control that filters data in a report, while a filter is a condition that restricts the data displayed in a report."},
-        {"question": "What is the difference between a drill-through and a drill-down in Power BI?", "answer": "A drill-through allows users to navigate from a summary report to a detailed report, while a drill-down allows users to view more detailed data within a visual."},
-        {"question": "What is the difference between a bookmark and a snapshot in Power BI?", "answer": "A bookmark is a snapshot of a report page that can be saved and revisited, while a snapshot is a static image of a report page."},
-        # Add up to 30 questions and answers
-    ],
+        {
+        "Q1": {
+            "question": "What is Power BI?",
+            "answer": "Power BI is a business analytics tool developed by Microsoft that allows users to visualize and analyze data.",
+            "explanation": "Power BI is a powerful tool for business users to gain insights from their data."
+        },
+        "Q2":
+            {
+            "question": "What are the different types of Power BI reports?",
+            "answer": "Power BI reports can be created using various types, including tables, charts, maps, and dashboards.",
+            "explanation": "Power BI offers a wide range of report types to suit different data visualization needs."
+        },
+        "Q3": {
+            "question": "What is a Power BI dashboard?",
+            "answer": "A Power BI dashboard is a collection of interactive visualizations and widgets that allow users to explore data in a user-friendly way.",
+            "explanation": "Dashboards provide a high-level overview of key metrics and insights from the underlying data."
+        },
+        "Q4": {
+            "question": "What is a Power BI dataset?",
+            "answer": "A Power BI dataset is a collection of data that can be used to create reports and dashboards.",
+            "explanation": "Datasets are the foundation of Power BI reports and dashboards."
+        },
+        "Q5": {
+            "question": "What is Power Query in Power BI?",
+            "answer": "Power Query is a data transformation tool in Power BI that allows users to import, transform, and clean data from various sources.",
+            "explanation": "Power Query simplifies the process of preparing data for analysis in Power BI."
+        },
+        "Q6": {
+            "question": "What is Power Pivot in Power BI?",
+            "answer": "Power Pivot is a data modeling tool in Power BI that allows users to create complex data models and perform advanced data analysis.",
+            "explanation": "Power Pivot enables users to perform complex calculations and data analysis on large datasets."
+        },
+        "Q7": {
+            "question": "What is Power View in Power BI?",
+            "answer": "Power View is a data visualization tool in Power BI that allows users to create interactive visualizations and dashboards.",
+            "explanation": "Power View provides a wide range of visualization options to help users understand their data."
+        },
+        "Q8": {
+            "question": "What is Power BI Desktop?",
+            "answer": "Power BI Desktop is a free desktop application that allows users to create Power BI reports and dashboards.",
+            "explanation": "Power BI Desktop provides a powerful set of tools for data modeling, visualization, and analysis."
+        },
+        "Q9": {
+            "question": "What is Power BI Service?",
+            "answer": "Power BI Service is a cloud-based platform that allows users to share and collaborate on Power BI reports and dashboards.",
+            "explanation": "Power BI Service enables users to access and share reports and dashboards from anywhere."
+        },
+        "Q10": {
+            "question": "What is Power BI Embedded?",
+            "answer": "Power BI Embedded is a service that allows developers to embed Power BI reports and dashboards into custom applications.",
+            "explanation": "Power BI Embedded enables developers to integrate Power BI functionality into their own applications."
+        }
+    },
+            ],
     "Data Analytics": [
-        {"question": "What is Data Analytics?", "answer": "Data Analytics involves analyzing raw data to find trends and insights."},
-        {"question": "What are the types of Data Analytics?", "answer": "Descriptive, Diagnostic, Predictive, and Prescriptive Analytics."},
-        {"question": "What is a data scientist?", "answer": "A data scientist is a professional who specializes in analyzing and modeling data."},
-        {"question": "What is the CRISP-DM model?", "answer": "CRISP-DM (Cross-Industry Standard Process for Data Mining) is a widely used methodology for data mining projects."},
-        {"question": "What is the difference between Data Analytics and Data Science?", "answer": "Data Analytics focuses on analyzing data to find insights, while Data Science involves analyzing data to build models and make predictions."},
-        {"question": "What is the difference between structured and unstructured data?", "answer": "Structured data is organized and can be easily processed, while unstructured data is not organized and requires more processing."},
-        {"question": "What is the difference between a data analyst and a data scientist?", "answer": "A data analyst focuses on analyzing data to find insights, while a data scientist focuses on analyzing data to build models and make predictions."},
-        {"question": "What is the difference between a data warehouse and a data lake?", "answer": "A data warehouse is a structured repository for data, while a data lake is a repository for raw data in its native format."},
-        {"question": "What is the difference between data mining and machine learning?", "answer": "Data mining is the process of discovering patterns in data, while machine learning is the process of building models that can learn from data."},
-        {"question": "What is the difference between supervised and unsupervised learning?", "answer": "Supervised learning uses labeled data to train a model, while unsupervised learning uses unlabeled data."},
-        {"question": "What is the difference between classification and regression?", "answer": "Classification predicts categories or labels, while regression predicts continuous values."},
-        {"question": "What is the difference between overfitting and underfitting?", "answer": "Overfitting occurs when a model is too complex and learns noise in the data, while underfitting occurs when a model is too simple and cannot capture the underlying patterns."},
-        {"question": "What is the difference between precision and recall?", "answer": "Precision is the ratio of true positives to the sum of true positives and false positives, while recall is the ratio of true positives to the sum of true positives and false negatives."},
-        {"question": "What is the difference between a data engineer and a data analyst?", "answer": "A data engineer focuses on building and maintaining data pipelines, while a data analyst focuses on analyzing data to find insights."},
-        {"question": "What is the difference between a data lake and a data warehouse?", "answer": "A data lake is a repository for raw data in its native format, while a data warehouse is a structured repository for data."},
-        {"question": "What is the difference between a data scientist and a machine learning engineer?", "answer": "A data scientist focuses on analyzing data to build models and make predictions, while a machine learning engineer focuses on building and deploying machine learning models."},
-        {"question": "What is the difference between a data analyst and a business analyst?", "answer": "A data analyst focuses on analyzing data to find insights, while a business analyst focuses on analyzing business processes and requirements."},
-        {"question": "What is the difference between a data scientist and a statistician?", "answer": "A data scientist focuses on analyzing data to build models and make predictions, while a statistician focuses on analyzing data to draw inferences and make decisions."},
-        {"question": "What is the difference between a data scientist and a data engineer?", "answer": "A data scientist focuses on analyzing data to build models and make predictions, while a data engineer focuses on building and maintaining data pipelines."},
-        {"question": "What is the difference between a data scientist and a machine learning engineer?", "answer": "A data scientist focuses on analyzing data to build models and make predictions, while a machine learning engineer focuses on building and deploying machine learning models."},
-
-        # Add up to 30 questions and answers
+        {
+        "Q1": {
+            "question": "What is Data Analytics?",            
+            "answer": "Data Analytics is the process of extracting meaningful insights from data.",
+            "explanation": "Data Analytics involves analyzing data to discover patterns, trends, and insights that can inform decision-making."
+        },
+        "Q2": {
+            "question": "What are the steps in a Data Analytics project?",
+            "answer": "Data collection, data cleaning, data analysis, data visualization, and reporting.",
+            "explanation": "Data Analytics projects typically involve these steps to transform raw data into actionable insights."
+        },
+        "Q3":
+        {
+            "question": "What is the difference between Data Analytics and Data Science?",
+            "answer": "Data Analytics focuses on analyzing data to find insights, while Data Science involves a broader range of activities, including data collection, modeling, and deployment.",
+            "explanation": "Data Analytics is a subset of Data Science, which encompasses a wider range of data-related activities."
+        },
+        "Q4": {
+            "question": "What is a Data Analyst?",
+            "answer": "A Data Analyst is a professional who specializes in analyzing data to find insights.",
+            "explanation": "Data Analysts use statistical and analytical techniques to interpret data and provide actionable recommendations."
+        },
+        "Q5": {
+            "question": "What is a Business Analyst?",
+            "answer": "A Business Analyst is a professional who specializes in analyzing business processes and requirements.",
+            "explanation": "Business Analysts use data and analytical tools to identify business needs and recommend solutions."
+        },
+        "Q6": {
+            "question": "What is a Data Engineer?",
+            "answer": "A Data Engineer is a professional who specializes in building and maintaining data pipelines.",
+            "explanation": "Data Engineers are responsible for designing, building, and maintaining the infrastructure needed to collect, process, and store data."
+        },
+        "Q7": {
+            "question": "What is a Machine Learning Engineer?",
+            "answer": "A Machine Learning Engineer is a professional who specializes in building and deploying machine learning models.",
+            "explanation": "Machine Learning Engineers are responsible for designing, building, and deploying machine learning models to solve business problems."
+        },
+        "Q8": {
+            "question": "What is a Data Scientist?",
+            "answer": "A Data Scientist is a professional who specializes in analyzing and modeling data.",
+            "explanation": "Data Scientists use statistical and analytical techniques to extract insights from data and build predictive models."
+        },
+        "Q9": {
+            "question": "What is the CRISP-DM model?",  
+            "answer": "CRISP-DM (Cross-Industry Standard Process for Data Mining) is a widely used methodology for data mining projects.",
+            "explanation": "The CRISP-DM model outlines a structured approach to data mining projects, including data preparation, modeling, and evaluation."
+        },
+        "Q10": {
+            "question": "What is a Data Warehouse?",
+            "answer": "A Data Warehouse is a centralized repository of data that is designed to support business decision-making.",
+            "explanation": "Data Warehouses store large amounts of data from various sources and provide a single, unified view of the data."
+        }
+    },
     ],
     "Data Science": [
-        {"question": "What is Data Science?", "answer": "Data Science is an interdisciplinary field that uses data for insights and decision-making."},
-        {"question": "What are the steps in a data science project?", "answer": "Data collection, cleaning, analysis, modeling, and deployment."},
-        {"question": "What is a data scientist?", "answer": "A data scientist is a professional who specializes in analyzing and modeling data."},
-        {"question": "What is a data engineer?", "answer": "A data engineer is a professional who specializes in building and maintaining data pipelines."},
-        {"question": "What is a machine learning engineer?", "answer": "A machine learning engineer is a professional who specializes in building and deploying machine learning models."},
-        {"question": "What is a data analyst?", "answer": "A data analyst is a professional who specializes in analyzing data to find insights."},
-        {"question": "What is a business analyst?", "answer": "A business analyst is a professional who specializes in analyzing business processes and requirements."},
-        {"question": "What is a statistician?", "answer": "A statistician is a professional who specializes in analyzing data to draw inferences and make decisions."},
-        {"question": "What is a data scientist?", "answer": "A data scientist is a professional who specializes in analyzing and modeling data."},
-        {"question": "What is the CRISP-DM model?", "answer": "CRISP-DM (Cross-Industry Standard Process for Data Mining) is a widely used methodology for data mining projects."},
-        {"question": "What is a data pipeline?", "answer": "A data pipeline is a set of processes that move data from one place to another."},
-        {"question": "What is a machine learning model?", "answer": "A machine learning model is a mathematical model that can learn from data and make predictions."},
-        {"question": "What is a data warehouse?", "answer": "A data warehouse is a large repository of data that is used for reporting and analysis."},
-        {"question": "What is a data lake?", "answer": "A data lake is a large repository of data that is used for storage and processing."},
-        {"question": "What is a data visualization?", "answer": "A data visualization is a graphical representation of data that helps to understand and communicate insights."},
-        {"question": "What is a data mining?", "answer": "Data mining is the process of discovering patterns and insights in large datasets."},
-        {"question": "What is a data cleaning?", "answer": "Data cleaning is the process of removing or correcting errors and inconsistencies in data."},
-        {"question": "What is a data analysis?", "answer": "Data analysis is the process of analyzing data to find insights and make decisions."},
-        {"question": "What is a data modeling?", "answer": "Data modeling is the process of creating a model of data to represent the structure and relationships of data."},
-        {"question": "What is a data mining?", "answer": "Data mining is the process of discovering patterns and insights in large datasets."},
-        # Add up to 30 questions and answers
-    ],
+        {
+        "Q1": {
+            "question": "What is Data Science?",
+            "answer": "Data Science is a interdisciplinary field that uses statistical and computational methods to extract insights from data.",
+            "explanation": "Data Science involves applying advanced statistical and computational techniques to extract insights from data."
+        },
+        "Q2": {
+            "question": "What is a Data Scientist?",
+            "answer": "A Data Scientist is a professional who specializes in analyzing and modeling data.",
+            "explanation": "Data Scientists use statistical and analytical techniques to extract insights from data and build predictive models."
+        },
+        "Q3": {
+            "question": "What is a Data Mining?",
+            "answer": "Data Mining is the process of discovering patterns and insights from large datasets.",
+            "explanation": "Data Mining involves using algorithms and statistical techniques to extract useful information from large datasets."
+        },
+        "Q4": {
+            "question": "What is a Data Visualization?",    
+            "answer": "Data Visualization is the graphical representation of data to help users understand and interpret information.",
+            "explanation": "Data Visualization uses charts, graphs, and other visual elements to communicate data insights effectively."
+        },
+        "Q5": {
+            "question": "What is a Machine Learning?",
+            "answer": "Machine Learning is a subset of Data Science that focuses on building models that can learn from data and make predictions.",
+            "explanation": "Machine Learning algorithms learn from data and make predictions based on patterns and relationships."
+        },
+        "Q6": {
+            "question": "What is a Deep Learning?",
+            "answer": "Deep Learning is a subset of Machine Learning that uses neural networks with multiple layers to learn complex patterns from data.",
+            "explanation": "Deep Learning models can learn complex relationships and representations from large datasets."
+        },
+        "Q7": {
+            "question": "What is a Neural Network?",
+            "answer": "A Neural Network is a machine learning model inspired by the structure and function of the human brain.",
+            "explanation": "Neural Networks consist of interconnected nodes or neurons that process information and learn from data."
+        },
+        "Q8": {
+            "question": "What is a Natural Language Processing (NLP)?",
+            "answer": "Natural Language Processing is a branch of artificial intelligence that focuses on the interaction between computers and humans using natural language.",
+            "explanation": "NLP enables computers to understand, interpret, and generate human language."
+        },
+        "Q9": {
+            "question": "What is a Data Science?",
+            "answer": "Data Science is the interdisciplinary field that uses scientific methods, processes, algorithms, and systems to extract knowledge and insights from data.",
+            "explanation": "Data Science involves using data to solve complex problems and make informed decisions."
+        },
+        "Q10": {
+            "question": "What is Data Visualization?",
+            "answer": "Data Visualization is the graphical representation of data to help users understand and interpret information.",
+            "explanation": "Data Visualization uses charts, graphs, and other visual elements to communicate data insights effectively."
+        }
+    },
+    ]
 }
 
 st.title("Interview Questions and Answers")
+
 
 # Create tabs for topics
 tabs = st.tabs(list(interview_questions.keys()))
@@ -239,6 +430,17 @@ for topic, tab in zip(interview_questions.keys(), tabs):
     with tab:
         st.header(f"{topic} Interview Questions")
         for qa in interview_questions[topic]:
-            st.subheader(f'Q. {qa["question"]}')
-            st.write(f'A. {qa["answer"]}')
-            st.markdown("---")  # Horizontal line
+            for key,question in qa.items():
+                if topic == "Python":
+                    st.subheader(f'{key}: {question["question"]}')
+                    st.write(f'Answer:')
+                    st.code(question["answer"])
+                    st.write(f'**Explanation:** {question["explanation"]}')
+                    st.markdown("---")  # Horizontal line
+                else:
+                    st.subheader(f'{key}: {question["question"]}')
+                    st.write(f'Answer:')
+                    st.write(question["answer"])
+                    st.write(f'**Explanation:** ')
+                    st.write(question["explanation"])
+                    st.markdown("---")  # Horizontal line
