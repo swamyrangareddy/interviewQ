@@ -419,7 +419,7 @@ interview_questions = {
     ]
 }
 
-st.title("Interview Questions and Answers")
+st.title("Interview Q and A ")
 
 
 # Create tabs for topics
