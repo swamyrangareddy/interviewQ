@@ -436,7 +436,8 @@ for topic, tab in zip(interview_questions.keys(), tabs):
                     st.subheader(f'{key}: {question["question"]}')
                     st.write(f'Answer:')
                     st.code(question["answer"])
-                    st.write(f'**Explanation:** {question["explanation"]}')
+                    st.write(f'**Explanation:**')
+                    st.write({question["explanation"]})
                     st.markdown("---")  # Horizontal line
                 else:
                     st.subheader(f'{key}: {question["question"]}')
