@@ -434,14 +434,14 @@ for topic, tab in zip(interview_questions.keys(), tabs):
             for key,question in qa.items():
                 if topic == "Python":
                     st.subheader(f'{key}: {question["question"]}')
-                    st.write(f'Answer:')
+                    st.write(f'**Answer:**')
                     st.code(question["answer"])
                     st.write(f'**Explanation:**')
                     st.write(question["explanation"])
                     st.markdown("---")  # Horizontal line
                 else:
                     st.subheader(f'{key}: {question["question"]}')
-                    st.write(f'Answer:')
+                    st.write(f'**Answer:**')
                     st.write(question["answer"])
                     st.write(f'**Explanation:** ')
                     st.write(question["explanation"])
